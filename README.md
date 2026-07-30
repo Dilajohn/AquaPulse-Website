@@ -1,4 +1,4 @@
-# AquaPulse: Smart IoT Fish Feeder
+﻿# AquaPulse: Smart IoT Fish Feeder
 
 **Group 21** -- Department of Computer Science, Makerere University -- 2026
 
@@ -82,6 +82,20 @@ guide for details on how this was diagnosed and fixed during development.
 The HC-SR04 ECHO pin outputs 5V, which exceeds the ESP32's 3.3V GPIO tolerance.
 A **1k / 2k resistor voltage divider** on the ECHO line steps this down safely
 to prevent damage to the microcontroller.
+
+### Enclosure Design
+
+**3D Render:**
+
+![3D render of the AquaPulse Smart Fish Feeder](img/3d-render.jpg)
+
+**Side Cutaway Diagram:**
+
+![Side cutaway diagram showing internal components](img/cutaway-diagram.jpg)
+
+The enclosure houses a translucent food hopper with ultrasonic fill-level sensing,
+a servo-driven dispensing mechanism with agitator arm, and a sealed electronics bay
+containing the Arduino/ESP32 controllers, DS3231 RTC, and power management board.
 
 ## Firmware
 
