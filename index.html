@@ -1,0 +1,630 @@
+﻿<!doctype html>
+<html>
+
+<head>
+  <title>AquaPulse: Smart IoT Fish Feeder - Group 21</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/footer.js"></script>
+  <style>
+    .menu-index {
+      color: rgb(255, 255, 255) !important;
+      opacity: 1 !important;
+      font-weight: 700 !important;
+    }
+    .video-placeholder {
+      width: 100%;
+      min-height: 300px;
+      background: #263238;
+      border: 2px dashed #546e7a;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #90a4ae;
+      font-size: 1.1em;
+      text-align: center;
+      padding: 20px;
+    }
+    .video-placeholder i {
+      font-size: 2em;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .member-card {
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 8px 0;
+      border-left: 4px solid #1a237e;
+    }
+    .member-card .name {
+      font-weight: 700;
+      font-size: 1.05em;
+      color: #1a237e;
+    }
+    .member-card .details {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 4px;
+    }
+    .spec-table td:first-child {
+      font-weight: 700;
+      width: 40%;
+    }
+    .highlight-box {
+      background: #e8eaf6;
+      border-left: 4px solid #1a237e;
+      padding: 15px 20px;
+      margin: 15px 0;
+      border-radius: 0 8px 8px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu-container"></div>
+  <div class="content-container">
+    <!-------------------------------------------------------------------------------------------->
+    <!--Start Header Banner-->
+    <div class="banner" style="background: linear-gradient(135deg, #0d47a1 0%, #1a237e 50%, #004d40 100%); height: 350px;">
+      <div class="banner-table flex-column" style="background-color: rgba(0, 0, 0, 0.3);">
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 class="add-top-margin-small">AquaPulse: Smart IoT Fish Feeder</h2>
+            <p class="text">
+              An affordable, ESP32-powered automated fish feeding system with Firebase-connected web dashboard,
+              offline-first RTC scheduling, and real-time hopper telemetry &mdash; designed for smallholder
+              Nile Tilapia aquaculture in Uganda.
+            </p>
+            <p class="text">
+              <strong>Group 21</strong> &mdash; Department of Computer Science, Makerere University &mdash; 2026
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Header Banner-->
+    <!-------------------------------------------------------------------------------------------->
+    <div class="content">
+      <div class="content-table flex-column">
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Team & Intro-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <p class="text text-large" id="team">
+              <strong>Mutsinzi Alex</strong>, Reg No: 25/U/03480PS | Std No: 2500703480<br>
+              <strong>Kahuma Walid</strong>, Reg No: 25/U/26619 | Std No: 2500726619<br>
+              <strong>Mugabi Robinson</strong>, Reg No: 25/U/03456/EVE | Std No: 2500703456<br>
+              <strong>Nanfuuka Bonitah</strong>, Reg No: 25/U/03527/PS | Std No: 2500703527<br>
+              <strong>Okuja Emmanuel Dila John</strong>, Reg No: 25/U/28777/PSA | Std No: 2500728777<br>
+              <a target="_blank" href="https://github.com/">Group 21</a><br>
+              Department of Computer Science<br>
+              Makerere University, Kampala, Uganda
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <p class="text add-top-margin">
+              AquaPulse is a Smart IoT Fish Feeder designed to address the critical challenges facing smallholder
+              aquaculture in East Africa. By combining an affordable ESP32 microcontroller with a Firebase-connected
+              web dashboard, real-time ultrasonic hopper monitoring, and offline-first RTC scheduling, AquaPulse
+              delivers precise, automated feed dispensing that reduces waste by up to 30% and eliminates the need
+              for daily dawn/dusk site visits.
+            </p>
+            <h3>Table of Contents</h3>
+            <ul>
+              <li><a href="#problem-statement">Problem Statement</a></li>
+              <li><a href="#objectives">Project Objectives</a></li>
+              <li><a href="#requirements">Project Requirements</a></li>
+              <li><a href="#target-users">Target Users</a></li>
+              <li><a href="#design">Project Design</a></li>
+              <li><a href="#prototype">System Prototype &amp; Assembly</a></li>
+              <li><a href="#videos">Project Videos</a></li>
+              <li><a href="#dashboard">Web Dashboard Interface</a></li>
+              <li><a href="#future-work">Future Work</a></li>
+              <li><a href="#conclusion">Conclusion</a></li>
+              <li><a href="#references">References</a></li>
+            </ul>
+          </div>
+        </div>
+        <!--End Team & Intro-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Problem Statement-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="problem-statement">Problem Statement</h2>
+            <hr>
+            <div class="highlight-box">
+              <p class="text" style="margin:0;">
+                Smallholder fish farmers in Uganda face four interconnected challenges that stifle productivity
+                and profitability:
+              </p>
+            </div>
+            <ul>
+              <li><strong>Inconsistent Manual Feeding:</strong> Irregular feeding schedules stunt Nile Tilapia growth and stagger overall aquaculture yields.</li>
+              <li><strong>Feed Waste:</strong> Wasted feed accounts for up to 30% of operating expenses due to wind drift and over-application.</li>
+              <li><strong>Prohibitive Costs:</strong> Existing commercial automated feeders are imported and priced at $300&ndash;$1,500+, putting them out of reach for local smallholders.</li>
+              <li><strong>No Remote Telemetry:</strong> Smallholders have no affordable, remote telemetry system to schedule feeds and monitor feed levels from their phones.</li>
+            </ul>
+          </div>
+        </div>
+        <!--End Problem Statement-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Objectives-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="objectives">Project Objectives</h2>
+            <hr>
+            <ul>
+              <li><strong>Affordable Hardware:</strong> Design an affordable, locally-sourced automated fish feeder using a standalone ESP32 DevKit.</li>
+              <li><strong>Web Dashboard:</strong> Build a web-based dashboard synced via Firebase Firestore for remote management and telemetry.</li>
+              <li><strong>Offline Resilience:</strong> Implement an offline-first scheduling fallback using a DS3231 RTC module to ensure feeding during WiFi drops.</li>
+              <li><strong>Power Isolation:</strong> Ensure hardware resilience by isolating high-current stepper motor rails to avoid ESP32 brownouts.</li>
+            </ul>
+          </div>
+        </div>
+        <!--End Objectives-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Requirements-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="requirements">Project Requirements</h2>
+            <hr>
+            <p class="text text-center graph-title">Hardware Components</p>
+            <div class="custom-table-container center add-top-margin-small">
+              <table class="custom-table spec-table">
+                <thead>
+                  <tr class="bg-color-gray">
+                    <th>Component</th>
+                    <th class="text-center">Specification / Purpose</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ESP32 DevKit</td>
+                    <td class="text-center">Standalone microcontroller &mdash; WiFi + BLE, Arduino C++ firmware</td>
+                  </tr>
+                  <tr class="bg-color-light-gray">
+                    <td>28BYJ-48 Stepper Motor + ULN2003</td>
+                    <td class="text-center">Feed dispenser mechanism with driver board</td>
+                  </tr>
+                  <tr>
+                    <td>16&times;2 I2C LCD</td>
+                    <td class="text-center">Local display of hopper capacity and system status</td>
+                  </tr>
+                  <tr class="bg-color-light-gray">
+                    <td>HC-SR04 Ultrasonic Sensor</td>
+                    <td class="text-center">Hopper fill-level measurement (with 1k&Omega;/2k&Omega; voltage divider on ECHO pin)</td>
+                  </tr>
+                  <tr>
+                    <td>DS3231 RTC Module</td>
+                    <td class="text-center">Local timekeeping for offline-first scheduling fallback</td>
+                  </tr>
+                  <tr class="bg-color-light-gray">
+                    <td>Piezo Buzzer &amp; LED</td>
+                    <td class="text-center">Audio/visual feedback for feed events and alerts</td>
+                  </tr>
+                  <tr>
+                    <td>Voltage Divider (1k&Omega; / 2k&Omega;)</td>
+                    <td class="text-center">Steps down 5V HC-SR04 ECHO to ESP32-safe 3.3V</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="text text-center graph-title">Software Stack</p>
+            <div class="custom-table-container center add-top-margin-small">
+              <table class="custom-table spec-table">
+                <thead>
+                  <tr class="bg-color-gray">
+                    <th>Layer</th>
+                    <th class="text-center">Technology</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Firmware</td>
+                    <td class="text-center">Arduino C++ with hardware button interrupts and Firestore polling</td>
+                  </tr>
+                  <tr class="bg-color-light-gray">
+                    <td>Backend / Cloud</td>
+                    <td class="text-center">Firebase Firestore (real-time NoSQL database)</td>
+                  </tr>
+                  <tr>
+                    <td>Web Dashboard</td>
+                    <td class="text-center">React + TypeScript + Vite, using Firestore SDK for live metrics</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--End Requirements-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Target Users-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="target-users">Target Users</h2>
+            <hr>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <img class="image max-width-400" src="img/dummay-img.png">
+          </div>
+          <div class="flex-item flex-item-stretch-4 flex-column">
+            <p class="text">
+              <a class="highlight-text" href="javascript:void(0)">Commercial Warehouse Fish Farmers</a><br>
+              Requires automated dosing, history logs, and multi-feeder dashboards for large-scale operations managing hundreds of ponds.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <img class="image max-width-400" src="img/dummay-img.png">
+          </div>
+          <div class="flex-item flex-item-stretch-4 flex-column">
+            <p class="text">
+              <a class="highlight-text" href="javascript:void(0)">Local Smallholder Fish Farmers</a><br>
+              Needs cost-effective automation to eliminate daily dawn/dusk site visits and reduce feed waste by up to 30%.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <img class="image max-width-400" src="img/dummay-img.png">
+          </div>
+          <div class="flex-item flex-item-stretch-4 flex-column">
+            <p class="text">
+              <a class="highlight-text" href="javascript:void(0)">Leisure Fish Keepers (Aquariums &amp; Ponds)</a><br>
+              Wants remote scheduling, live status updates, and mobile warning alerts for home and ornamental aquaculture.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <img class="image max-width-400" src="img/dummay-img.png">
+          </div>
+          <div class="flex-item flex-item-stretch-4 flex-column">
+            <p class="text">
+              <a class="highlight-text" href="javascript:void(0)">Cooperative Fish Farms</a><br>
+              Shared aquaculture communities needing joint dashboard access to track inventory and coordinate feeding across multiple sites.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <img class="image max-width-400" src="img/dummay-img.png">
+          </div>
+          <div class="flex-item flex-item-stretch-4 flex-column">
+            <p class="text">
+              <a class="highlight-text" href="javascript:void(0)">Aquaculture Research Facilities</a><br>
+              Requires exact portion controls and detailed audit logs for feed studies and growth experiments.
+            </p>
+          </div>
+        </div>
+        <!--End Target Users-->
+        <!-------------------------------------------------------------------------------------------->
+      </div>
+    </div>
+    <!-------------------------------------------------------------------------------------------->
+    <!--Mid-page Banner-->
+    <div class="banner" style="background: linear-gradient(135deg, #004d40 0%, #00695c 50%, #0d47a1 100%); height: 300px;">
+      <div class="banner-table flex-column" style="background-color: rgba(0, 0, 0, 0.3);">
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 class="add-top-margin-small">System Design &amp; Architecture</h2>
+            <p class="text">
+              AquaPulse replaces a dual-board setup with a single standalone ESP32, cutting serial lag and cost
+              while maintaining isolated power rails for the stepper motor to prevent brownout resets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Mid-page Banner-->
+    <!-------------------------------------------------------------------------------------------->
+    <div class="content">
+      <div class="content-table flex-column">
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Project Design-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="design" class="no-top-margin">Project Design</h2>
+            <hr>
+            <p class="text">
+              The AquaPulse system architecture centers on a standalone ESP32 DevKit that serves as both the
+              hardware controller and WiFi communication hub. The design eliminates the need for a secondary
+              microcontroller, reducing cost and serial communication lag that plagued earlier dual-board prototypes.
+            </p>
+            <div class="highlight-box">
+              <p class="text" style="margin:0;">
+                <strong>Key Design Decisions:</strong><br>
+                &bull; <strong>Standalone ESP32:</strong> Single MCU handles sensor reading, motor control, LCD display, and Firebase communication.<br>
+                &bull; <strong>Isolated Power Rails:</strong> The 28BYJ-48 stepper motor draws current from a separate 5V rail to prevent ESP32 brownouts.<br>
+                &bull; <strong>Voltage Divider:</strong> A 1k&Omega;/2k&Omega; resistor divider on the HC-SR04 ECHO pin safely steps 5V down to ESP32-compatible 3.3V.<br>
+                &bull; <strong>Offline-First RTC:</strong> The DS3231 module maintains local time and triggers scheduled feedings even during WiFi outages, caching events for upload upon reconnection.
+              </p>
+            </div>
+            <p class="text text-center graph-title">
+              System Architecture Diagram
+            </p>
+            <img class="image center max-width-400 add-top-margin-small" src="img/dummay-img.png">
+            <p class="text text-center graph-title">
+              Circuit Wiring Schematic
+            </p>
+            <img class="image center max-width-400 add-top-margin-small" src="img/dummay-img.png">
+          </div>
+        </div>
+        <!--End Project Design-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Prototype & Assembly-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="prototype">System Prototype &amp; Assembly</h2>
+            <hr>
+            <p class="text">
+              The physical prototype integrates all components onto a custom enclosure mounted above the fish pond.
+              The hopper holds feed pellets and the stepper-driven auger dispenses precise portions at scheduled intervals.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <img class="image" src="img/dummay-img.png">
+            <p class="image-caption">Assembled AquaPulse prototype unit</p>
+          </div>
+          <div class="flex-item flex-item-stretch flex-column">
+            <p class="text">
+              <strong>Hopper Telemetry:</strong> Real-time ultrasonic depth sensing maps the hopper capacity
+              (e.g., 78% full) onto both the I2C LCD and the Firebase Firestore database, giving farmers
+              instant visibility into feed levels from anywhere.<br><br>
+              <strong>Power Spike Mitigation:</strong> Separating the stepper motor's power path from the
+              ESP32's power supply completely solved the brownout issues that caused random resets in the
+              earlier dual-rail prototype.<br><br>
+              <strong>Offline Scheduling Fallback:</strong> Verified that scheduled feedings trigger on-time
+              via the DS3231 RTC even with WiFi completely disconnected. Events are cached locally and
+              uploaded to Firestore automatically upon reconnection.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <p class="text">
+              The firmware is written in Arduino C++ and utilizes hardware button interrupts for manual
+              feed override, alongside server-side Firestore polling filters to reduce unnecessary database
+              reads and minimize Firebase costs.
+            </p>
+          </div>
+        </div>
+        <!--End Prototype & Assembly-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Video Slots-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="videos">Project Videos</h2>
+            <hr>
+            <p class="text">
+              Below are demonstration videos of the AquaPulse system in action. Video content will be added as the project progresses.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <div class="video-placeholder">
+              <div>
+                <i class="fas fa-video"></i><br>
+                <strong>Video 1: Hardware Assembly &amp; Wiring</strong><br>
+                <span style="font-size:0.85em;">Demonstration of the ESP32 circuit assembly, stepper motor wiring, and ultrasonic sensor setup.</span><br>
+                <em>(Video to be added &mdash; place MP4 file in /vid/ folder)</em>
+              </div>
+            </div>
+          </div>
+          <div class="flex-item flex-item-stretch flex-column">
+            <p class="text">
+              This video will showcase the complete hardware assembly process, from wiring the ULN2003
+              driver to the ESP32 GPIO pins, connecting the HC-SR04 with the voltage divider, and
+              mounting the DS3231 RTC module for offline scheduling.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <p class="text">
+              This video will demonstrate the automated feeding cycle: the stepper motor dispensing
+              a precise portion of pellets, the LCD updating with hopper capacity, and the piezo
+              buzzer confirming a successful feed event.
+            </p>
+          </div>
+          <div class="flex-item flex-item-stretch flex-column">
+            <div class="video-placeholder">
+              <div>
+                <i class="fas fa-video"></i><br>
+                <strong>Video 2: Automated Feeding Demo</strong><br>
+                <span style="font-size:0.85em;">Live demonstration of scheduled feeding, hopper telemetry, and buzzer alerts.</span><br>
+                <em>(Video to be added &mdash; place MP4 file in /vid/ folder)</em>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <div class="video-placeholder">
+              <div>
+                <i class="fas fa-video"></i><br>
+                <strong>Video 3: Web Dashboard &amp; Firebase Telemetry</strong><br>
+                <span style="font-size:0.85em;">Walkthrough of the React dashboard, live hopper monitoring, and feed scheduling UI.</span><br>
+                <em>(Video to be added &mdash; place MP4 file in /vid/ folder)</em>
+              </div>
+            </div>
+          </div>
+          <div class="flex-item flex-item-stretch flex-column">
+            <p class="text">
+              This video will walk through the React + TypeScript web dashboard: setting feed schedules,
+              viewing real-time hopper capacity graphs, receiving low-feed alerts, and verifying that
+              offline-cached events sync correctly when WiFi reconnects.
+            </p>
+          </div>
+        </div>
+        <!--End Video Slots-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Web Dashboard-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="dashboard">Web Dashboard Interface</h2>
+            <hr>
+            <p class="text">
+              The AquaPulse web dashboard is built with React + TypeScript + Vite and connects to Firebase
+              Firestore for real-time data synchronization. Farmers can monitor hopper levels, configure
+              feeding schedules, and review historical feeding logs from any device.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <img class="image" src="img/dummay-img.png">
+            <p class="image-caption">Dashboard overview showing hopper capacity and feed schedule</p>
+          </div>
+          <div class="flex-item flex-item-stretch flex-column">
+            <img class="image" src="img/dummay-img.png">
+            <p class="image-caption">Historical feeding logs and analytics</p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <p class="text">
+              Key dashboard features include real-time hopper capacity percentage with visual gauge,
+              configurable daily feeding schedules with portion sizes, event history with timestamps
+              from both online and offline-triggered feeds, and low-feed-level push notifications
+              to alert farmers before the hopper runs empty.
+            </p>
+          </div>
+        </div>
+        <!--End Web Dashboard-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Future Work-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="future-work">Future Work</h2>
+            <hr>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <img class="image max-width-400" src="img/dummay-img.png">
+          </div>
+          <div class="flex-item flex-item-stretch-4 flex-column">
+            <p class="text">
+              <a class="highlight-text" href="javascript:void(0)">CV Feed Waste Detection (V2)</a><br>
+              Integrate an ESP32-CAM module to detect floating uneaten pellets on the water surface and automatically scale portion sizes to minimize waste.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <img class="image max-width-400" src="img/dummay-img.png">
+          </div>
+          <div class="flex-item flex-item-stretch-4 flex-column">
+            <p class="text">
+              <a class="highlight-text" href="javascript:void(0)">Fish Activity Classification</a><br>
+              Use ML models to classify surface hits and activity levels as growth indicators, enabling data-driven insights into fish health and development.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <img class="image max-width-400" src="img/dummay-img.png">
+          </div>
+          <div class="flex-item flex-item-stretch-4 flex-column">
+            <p class="text">
+              <a class="highlight-text" href="javascript:void(0)">Multi-Sensor Diagnostic Probe</a><br>
+              Add pH, dissolved oxygen, and temperature sensor arrays to link water quality metrics with feeding logs for holistic pond management.
+            </p>
+          </div>
+        </div>
+        <!--End Future Work-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Conclusion-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="conclusion">Conclusion</h2>
+            <hr>
+            <div class="highlight-box">
+              <p class="text" style="margin:0;">
+                <strong>Successful Integration:</strong> Replaced the dual-board setup with a standalone ESP32, cutting serial communication lag and hardware cost significantly.
+              </p>
+            </div>
+            <div class="highlight-box">
+              <p class="text" style="margin:0;">
+                <strong>High Resilience:</strong> Standalone RTC scheduling and isolated power rails prove highly reliable for rural fish farming environments with unstable connectivity.
+              </p>
+            </div>
+            <div class="highlight-box">
+              <p class="text" style="margin:0;">
+                <strong>High ROI:</strong> Precise portion schedules reduce feed waste by up to 30%, significantly improving smallholder profits and aquaculture sustainability.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--End Conclusion-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start References-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="references">References</h2>
+            <hr>
+            <ol>
+              <li>
+                <p class="text-small-margin">
+                  Makerere University CS Department. "Smart Fish Feeder Specs," Group 21 Final Design Report, 2026.
+                </p>
+              </li>
+              <li>
+                <p class="text-small-margin">
+                  Espressif Systems. "ESP32 DevKit Technical Reference Manual," 2025.
+                  <a class="break-long-url" target="_blank" href="https://www.espressif.com/en/products/socs/esp32">https://www.espressif.com/en/products/socs/esp32</a>
+                </p>
+              </li>
+              <li>
+                <p class="text-small-margin">
+                  Google Cloud. "Cloud Firestore SDK Documentation &amp; Security Best Practices," 2026.
+                  <a class="break-long-url" target="_blank" href="https://firebase.google.com/docs/firestore">https://firebase.google.com/docs/firestore</a>
+                </p>
+              </li>
+              <li>
+                <p class="text-small-margin">
+                  Adafruit. "RTClib Library Guide for DS3231 RTC Module," 2025.
+                  <a class="break-long-url" target="_blank" href="https://learn.adafruit.com/adafruit-ds3231-precision-rtc-breakout">https://learn.adafruit.com/adafruit-ds3231-precision-rtc-breakout</a>
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!--End References-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Credits-->
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <p class="text text-small text-italic add-top-margin-large">
+              Credits: <span class="highlight-text">Group 21</span>: Mutsinzi Alex, Kahuma Walid, Mugabi Robinson, Nanfuuka Bonitah, Okuja Emmanuel Dila John / <span class="highlight-text">Department of Computer Science, Makerere University</span>
+            </p>
+          </div>
+        </div>
+        <!--End Credits-->
+        <!-------------------------------------------------------------------------------------------->
+      </div>
+    </div>
+    <div class="footer-container"></div>
+  </div>
+</body>
+
+</html>
