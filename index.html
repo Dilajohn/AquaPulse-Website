@@ -406,6 +406,58 @@
             </p>
           </div>
         </div>
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Enclosure Design-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h3>3D Enclosure Design</h3>
+            <p class="text">
+              The AquaPulse enclosure was designed to house all electronic and mechanical components in a
+              single rugged, weather-resistant unit suitable for outdoor pond-side deployment. Below is
+              the 3D render of the assembled device alongside a side cutaway view revealing the internal
+              layout.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <img class="image" src="img/3d-render.jpg">
+            <p class="image-caption">3D render of the AquaPulse Smart Fish Feeder enclosure</p>
+          </div>
+          <div class="flex-item flex-item-stretch flex-column">
+            <p class="text">
+              The enclosure features a <strong>translucent food hopper</strong> on top, allowing visual
+              inspection of feed levels at a glance. The front panel includes a <strong>16x2 I2C LCD</strong>
+              displaying real-time status (time, hopper capacity, connectivity), a <strong>yellow status
+              LED</strong>, and a <strong>red manual feed button</strong> for on-demand dispensing.<br><br>
+              On the right side, a <strong>servo-driven actuator assembly</strong> with an adjustable lever
+              arm connects to the dispensing auger, pushing pellets through the outlet chute into the pond.
+              The green metallic casing provides durability while maintaining a compact footprint.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <img class="image" src="img/cutaway-diagram.jpg">
+            <p class="image-caption">Side cutaway diagram showing internal component layout</p>
+          </div>
+          <div class="flex-item flex-item-stretch flex-column">
+            <p class="text">
+              The cutaway view reveals three functional zones:<br><br>
+              <strong>Hopper &amp; Sensing:</strong> An <strong>HC-SR04 ultrasonic sensor</strong> mounted
+              above the pellet reservoir continuously measures fill level. The translucent hopper lid
+              protects feed from moisture while allowing visual checks.<br><br>
+              <strong>Dispensing Mechanism:</strong> A <strong>28BYJ-48 stepper motor</strong> drives the
+              dispensing auger through a geared wheel with an agitator arm to prevent pellet bridging.
+              Portions are metered through the dispensing chamber and exit via the angled outlet chute.<br><br>
+              <strong>Electronics Bay:</strong> The sealed lower compartment houses the
+              <strong>ESP32 DevKit</strong>, <strong>DS3231 RTC module</strong> with coin-cell backup,
+              <strong>ULN2003 stepper driver</strong>, and a <strong>power management board</strong>
+              with isolated 5V rails for the motor and logic circuits.
+            </p>
+          </div>
+        </div>
+        <!--End Enclosure Design-->
         <!--End Prototype & Assembly-->
         <!-------------------------------------------------------------------------------------------->
         <!--Start Video Slots-->
