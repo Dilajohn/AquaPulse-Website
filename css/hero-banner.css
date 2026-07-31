@@ -29,7 +29,7 @@ html { scroll-behavior: smooth; }
    ========================================================== */
 .ap-hero {
   position: relative;
-  min-height: 62vh;
+  min-height: 54vh;
   display: grid;
   grid-template-columns: 1.15fr 1fr;
   align-items: center;
