@@ -29,12 +29,12 @@ html { scroll-behavior: smooth; }
    ========================================================== */
 .ap-hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 78vh;
   display: grid;
   grid-template-columns: 1.15fr 1fr;
   align-items: center;
   gap: clamp(24px, 4vw, 64px);
-  padding: clamp(28px, 5vw, 72px) clamp(24px, 6vw, 84px);
+  padding: clamp(24px, 4vw, 56px) clamp(24px, 6vw, 84px);
   background:
     radial-gradient(ellipse 70% 55% at 18% 8%, rgba(111,168,150,0.14), transparent 60%),
     linear-gradient(180deg, #0E2422 0%, #0A1B19 100%);
