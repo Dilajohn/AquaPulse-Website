@@ -1,0 +1,538 @@
+/* ==========================================================================
+   AquaPulse Hero Banner
+   Scoped styles for the header hero and mid-page pond scene.
+   All classes prefixed with .ap- to avoid conflicts with frame.css globals.
+   ========================================================================== */
+
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500&display=swap');
+
+/* Smooth scroll for anchor links */
+html { scroll-behavior: smooth; }
+
+/* ---------- Design tokens ---------- */
+.ap-hero,
+.ap-mid-banner {
+  --pond-deep:   #0E2422;
+  --pond-mid:    #173A34;
+  --pond-mid-2:  #204A42;
+  --foam:        #EDEAE0;
+  --foam-dim:    rgba(237,234,224,0.68);
+  --pellet:      #C98A3E;
+  --dawn:        #E8734A;
+  --ripple:      #6FA896;
+  --frame-radius: 18px;
+}
+
+/* ==========================================================
+   HEADER HERO  (.ap-hero)
+   ========================================================== */
+.ap-hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: clamp(24px, 4vw, 64px);
+  padding: clamp(28px, 5vw, 72px) clamp(24px, 6vw, 84px);
+  background:
+    radial-gradient(ellipse 70% 55% at 18% 8%, rgba(111,168,150,0.14), transparent 60%),
+    linear-gradient(180deg, #0E2422 0%, #0A1B19 100%);
+  font-family: 'Inter', sans-serif;
+  color: #EDEAE0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+@media (max-width: 860px) {
+  .ap-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 56px;
+    padding-bottom: 40px;
+  }
+}
+
+/* Override frame.css .banner h* { color: white } */
+.ap-hero h1,
+.ap-hero h2,
+.ap-hero h3,
+.ap-hero p,
+.ap-hero span { color: inherit; }
+
+/* ---------- Copy column ---------- */
+.ap-hero .ap-copy { position: relative; z-index: 2; }
+
+.ap-hero .ap-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #C98A3E;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 22px 0;
+}
+
+.ap-hero .ap-eyebrow::before {
+  content: "";
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #C98A3E;
+  box-shadow: 0 0 0 0 rgba(201,138,62,.6);
+  animation: ap-pulse-dot 2.4s ease-out infinite;
+}
+
+@keyframes ap-pulse-dot {
+  0%   { box-shadow: 0 0 0 0 rgba(201,138,62,.55); }
+  70%  { box-shadow: 0 0 0 9px rgba(201,138,62,0); }
+  100% { box-shadow: 0 0 0 0 rgba(201,138,62,0); }
+}
+
+.ap-hero .ap-heading {
+  font-family: 'Fraunces', serif;
+  font-weight: 340;
+  font-size: clamp(38px, 5.4vw, 68px);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  margin: 0 0 22px 0;
+  max-width: 12ch;
+  color: #EDEAE0;
+}
+
+.ap-hero .ap-heading em {
+  font-style: italic;
+  font-weight: 500;
+  color: #6FA896;
+}
+
+.ap-hero .ap-sub {
+  font-size: clamp(15.5px, 1.5vw, 18px);
+  line-height: 1.55;
+  color: rgba(237,234,224,0.68);
+  max-width: 46ch;
+  margin: 0 0 34px 0;
+}
+
+/* ---------- CTA buttons ---------- */
+.ap-hero .ap-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+
+.ap-hero .ap-btn-primary {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #0E2422;
+  background: #E8734A;
+  padding: 14px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform .25s ease, box-shadow .25s ease;
+  box-shadow: 0 8px 24px -8px rgba(232,115,74,.55);
+}
+
+.ap-hero .ap-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -8px rgba(232,115,74,.65);
+}
+
+.ap-hero .ap-btn-primary:focus-visible,
+.ap-hero .ap-link-secondary:focus-visible {
+  outline: 2px solid #EDEAE0;
+  outline-offset: 3px;
+}
+
+.ap-hero .ap-link-secondary {
+  color: rgba(237,234,224,0.68);
+  font-size: 14.5px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(237,234,224,.35);
+}
+
+.ap-hero .ap-link-secondary:hover { color: #EDEAE0; }
+
+/* ---------- Live readout chips ---------- */
+.ap-hero .ap-readouts { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.ap-hero .ap-chip {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: .03em;
+  color: rgba(237,234,224,0.68);
+  background: rgba(111,168,150,0.08);
+  border: 1px solid rgba(111,168,150,0.28);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ap-hero .ap-chip b    { color: #EDEAE0; font-weight: 600; }
+.ap-hero .ap-chip .ap-led { width: 6px; height: 6px; border-radius: 50%; background: #6FA896; }
+
+/* ---------- Frame (right column) ---------- */
+.ap-hero .ap-frame-wrap { position: relative; z-index: 2; }
+
+.ap-hero .ap-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3.3;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #173A34;
+  box-shadow:
+    0 30px 60px -20px rgba(0,0,0,.55),
+    0 0 0 1px rgba(111,168,150,0.18);
+}
+
+.ap-hero .ap-sky {
+  position: absolute; inset: 0 0 42% 0;
+  background: linear-gradient(180deg, #2C534B 0%, #204A42 100%);
+}
+
+.ap-hero .ap-slide {
+  position: absolute; inset: 0 0 42% 0;
+  background-size: cover;
+  background-position: center 38%;
+  opacity: 0;
+  animation: ap-crossfade 14s infinite;
+  mix-blend-mode: normal;
+}
+
+@keyframes ap-crossfade {
+  0%   { opacity: 0;   transform: scale(1.08); }
+  4%   { opacity: 1; }
+  46%  { opacity: 1;   transform: scale(1.0); }
+  50%  { opacity: 0;   transform: scale(1.0); }
+  100% { opacity: 0; }
+}
+
+.ap-hero .ap-slide.ap-s2 { animation-delay: 7s; }
+
+.ap-hero .ap-sky-veil {
+  position: absolute; inset: 0 0 42% 0;
+  background: linear-gradient(180deg, rgba(14,36,34,0) 55%, rgba(14,36,34,.55) 100%);
+}
+
+.ap-hero .ap-water {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 58%;
+  background: linear-gradient(180deg, #173A34 0%, #0E2422 100%);
+}
+
+.ap-hero .ap-waterline-svg {
+  position: absolute; left: 0; right: 0; bottom: 42%; height: 34px;
+  transform: translateY(50%);
+}
+
+.ap-hero .ap-bubbles {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 58%; overflow: hidden;
+}
+
+.ap-hero .ap-bubble {
+  position: absolute;
+  bottom: -14px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(237,234,224,.5);
+  animation: ap-rise linear infinite;
+}
+
+@keyframes ap-rise {
+  0%   { transform: translateY(0) translateX(0);     opacity: 0; }
+  10%  { opacity: .7; }
+  90%  { opacity: .35; }
+  100% { transform: translateY(-220px) translateX(var(--drift, 8px)); opacity: 0; }
+}
+
+.ap-hero .ap-frame-caption {
+  position: absolute; left: 18px; bottom: 16px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .06em;
+  color: rgba(237,234,224,.55);
+  z-index: 3;
+}
+
+/* ==========================================================
+   MID-PAGE BANNER  (.ap-mid-banner)
+   ========================================================== */
+.ap-mid-banner {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0A1B19 0%, #0E2422 100%);
+  font-family: 'Inter', sans-serif;
+  color: #EDEAE0;
+  box-sizing: border-box;
+}
+
+/* Override frame.css .banner h* { color: white } */
+.ap-mid-banner h1,
+.ap-mid-banner h2,
+.ap-mid-banner h3,
+.ap-mid-banner p,
+.ap-mid-banner span { color: inherit; }
+
+.ap-mid-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(20px, 3vw, 48px);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(36px, 4vw, 60px) 30px;
+}
+
+@media (max-width: 760px) {
+  .ap-mid-inner { grid-template-columns: 1fr; }
+}
+
+/* ---------- Copy ---------- */
+.ap-mid-copy { position: relative; z-index: 2; }
+
+.ap-mid-copy .ap-mid-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #C98A3E;
+  margin: 0 0 14px 0;
+}
+
+.ap-mid-copy .ap-mid-heading {
+  font-family: 'Fraunces', serif;
+  font-weight: 340;
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.1;
+  margin: 0 0 16px 0;
+  color: #EDEAE0;
+}
+
+.ap-mid-copy .ap-mid-heading em {
+  font-style: italic;
+  font-weight: 500;
+  color: #6FA896;
+}
+
+.ap-mid-copy .ap-mid-sub {
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.55;
+  color: rgba(237,234,224,0.68);
+  margin: 0 0 20px 0;
+}
+
+.ap-mid-copy .ap-mid-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  letter-spacing: .04em;
+  color: #E8734A;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ap-mid-copy .ap-mid-link:hover { text-decoration: underline; }
+
+/* ---------- Frame ---------- */
+.ap-mid-frame-wrap { position: relative; z-index: 2; }
+
+.ap-mid-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #173A34;
+  box-shadow:
+    0 20px 40px -16px rgba(0,0,0,.5),
+    0 0 0 1px rgba(111,168,150,0.18);
+}
+
+.ap-mid-frame .ap-sky {
+  position: absolute; inset: 0 0 42% 0;
+  background: linear-gradient(180deg, #2C534B 0%, #204A42 100%);
+}
+
+.ap-mid-frame .ap-slide {
+  position: absolute; inset: 0 0 42% 0;
+  background-size: cover;
+  background-position: center 38%;
+  opacity: 0;
+  animation: ap-mid-slide 16s infinite;
+}
+
+@keyframes ap-mid-slide {
+  0%, 100% { opacity: 0; transform: scale(1.06); }
+  4%       { opacity: 1; transform: scale(1.02); }
+  46%      { opacity: 1; transform: scale(1.0); }
+  50%      { opacity: 0; transform: scale(1.0); }
+}
+
+.ap-mid-frame .ap-slide.ap-s2 { animation-delay: 8s; }
+
+.ap-mid-frame .ap-sky-veil {
+  position: absolute; inset: 0 0 42% 0;
+  background: linear-gradient(180deg, rgba(14,36,34,0) 55%, rgba(14,36,34,.55) 100%);
+}
+
+.ap-mid-frame .ap-water {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 58%;
+  background: linear-gradient(180deg, #173A34 0%, #0E2422 100%);
+}
+
+.ap-mid-frame .ap-waterline-svg {
+  position: absolute; left: 0; right: 0; bottom: 42%; height: 28px;
+  transform: translateY(50%);
+}
+
+.ap-mid-frame .ap-bubbles {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 58%; overflow: hidden;
+}
+
+.ap-mid-frame .ap-bubble {
+  position: absolute;
+  bottom: -14px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(237,234,224,.5);
+  animation: ap-rise linear infinite;
+}
+
+.ap-mid-frame .ap-frame-caption {
+  position: absolute; left: 14px; bottom: 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .06em;
+  color: rgba(237,234,224,.5);
+  z-index: 3;
+}
+
+/* ==========================================================
+   ACCESSIBILITY  (reduced motion)
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .ap-hero .ap-slide,
+  .ap-hero .ap-bubble,
+  .ap-hero .ap-eyebrow::before,
+  .ap-mid-frame .ap-slide,
+  .ap-mid-frame .ap-bubble {
+    animation: none !important;
+  }
+  .ap-hero .ap-slide.ap-s1,
+  .ap-mid-frame .ap-slide.ap-s1 { opacity: 1; }
+  .ap-hero .ap-slide.ap-s2,
+  .ap-mid-frame .ap-slide.ap-s2 { opacity: 0; }
+}
+
+/* ==========================================================
+   THEME BRIDGE
+   Unifies the banner pond palette with the rest of the page:
+   1. Gradient transition strips (dark banner → white content)
+   2. Content accent colors (borders, tables, headings)
+   3. Typography unification (Inter as primary sans)
+   ========================================================== */
+
+/* ---------- 1. Transition strips ---------- */
+.ap-transition-strip {
+  height: 90px;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.ap-transition-hero {
+  background: linear-gradient(
+    180deg,
+    #0A1B19 0%,
+    rgba(10,27,25,0.72) 35%,
+    rgba(10,27,25,0.22) 68%,
+    transparent 100%
+  );
+}
+
+.ap-transition-mid {
+  background: linear-gradient(
+    180deg,
+    #0E2422 0%,
+    rgba(14,36,34,0.72) 35%,
+    rgba(14,36,34,0.22) 68%,
+    transparent 100%
+  );
+}
+
+/* ---------- 2. Content accent overrides ---------- */
+
+/* Explicit white so the gradient strip above fades cleanly */
+.content-container { background-color: #fff; }
+
+/* Typography: Inter as primary, existing fonts as fallback */
+body {
+  font-family: 'Inter', 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.content,
+.content p,
+.content ul,
+.content ol,
+.content li {
+  font-family: 'Inter', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+}
+
+.content h2,
+.content h3 {
+  font-family: 'Inter', 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+/* Heading accent: ripple green underline instead of default gray */
+.content h2#problem-statement,
+.content h2#objectives,
+.content h2#requirements,
+.content h2#target-users,
+.content h2#design,
+.content h2#prototype,
+.content h2#videos,
+.content h2#dashboard,
+.content h2#future-work,
+.content h2#conclusion,
+.content h2#references {
+  color: #0E2422;
+}
+
+.content hr {
+  background: linear-gradient(90deg, #6FA896 0%, #D5DDD9 40%, transparent 100%);
+  height: 2px;
+}
+
+/* Table headers + alternating rows: pond-tinted warm grays */
+.custom-table tr.bg-color-gray {
+  background-color: #D5DDD9;
+}
+
+.custom-table tr.bg-color-gray th {
+  color: #0E2422;
+}
+
+.custom-table tr.bg-color-light-gray {
+  background-color: #EDF1EF;
+}
+
+/* ---------- 3. Banner link hover ---------- */
+.banner a:hover {
+  color: #E8734A;
+}
