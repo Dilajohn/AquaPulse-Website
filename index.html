@@ -512,18 +512,15 @@
         </div>
         <div class="flex-row">
           <div class="flex-item flex-item-stretch flex-column">
-            <div class="video-placeholder">
-              <div>
-                <i class="fas fa-video"></i><br>
-                <strong>Video 1: Hardware Assembly &amp; Wiring</strong><br>
-                <span style="font-size:0.85em;">Demonstration of the ESP32 circuit assembly, stepper motor wiring, and ultrasonic sensor setup.</span><br>
-                <em>(Video to be added &mdash; place MP4 file in /vid/ folder)</em>
-              </div>
-            </div>
+            <video controls preload="metadata" poster="img/loading.gif" style="width:100%; border-radius:8px; background:#000;">
+              <source src="vid/vid1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="image-caption">Video 1: Hardware Assembly &amp; Wiring &mdash; ESP32 circuit, stepper motor, and ultrasonic sensor setup</p>
           </div>
           <div class="flex-item flex-item-stretch flex-column">
             <p class="text">
-              This video will showcase the complete hardware assembly process, from wiring the ULN2003
+              This video showcases the complete hardware assembly process, from wiring the ULN2003
               driver to the ESP32 GPIO pins, connecting the HC-SR04 with the voltage divider, and
               mounting the DS3231 RTC module for offline scheduling.
             </p>
@@ -532,7 +529,7 @@
         <div class="flex-row">
           <div class="flex-item flex-item-stretch flex-column">
             <p class="text">
-              This video will demonstrate the automated feeding cycle: the stepper motor dispensing
+              This video  demonstrates the automated feeding cycle: the stepper motor dispensing
               a precise portion of pellets, the LCD updating with hopper capacity, and the piezo
               buzzer confirming a successful feed event.
             </p>
@@ -558,7 +555,7 @@
           </div>
           <div class="flex-item flex-item-stretch flex-column">
             <p class="text">
-              This video will walk through the React + TypeScript web dashboard: setting feed schedules,
+              This video  walks through the React + TypeScript web dashboard: setting feed schedules,
               viewing real-time hopper capacity graphs, receiving low-feed alerts, and verifying that
               offline-cached events sync correctly when WiFi reconnects.
             </p>
