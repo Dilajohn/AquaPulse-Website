@@ -51,6 +51,19 @@ html { scroll-behavior: smooth; }
     padding-top: 56px;
     padding-bottom: 40px;
   }
+  
+  /* Simplify carousel on tablets/mobile for cleaner appearance */
+  .ap-hero .ap-slide {
+    animation: ap-crossfade-mobile 18s infinite;
+  }
+}
+
+@keyframes ap-crossfade-mobile {
+  0%   { opacity: 0;   transform: scale(1.02); }
+  8%   { opacity: 0.6; }
+  25%  { opacity: 0.6; transform: scale(1.0); }
+  33%  { opacity: 0;   transform: scale(1.0); }
+  100% { opacity: 0; }
 }
 
 /* Override frame.css .banner h* { color: white } */
@@ -206,15 +219,16 @@ html { scroll-behavior: smooth; }
   position: absolute; inset: 0 0 42% 0;
   background-size: cover;
   background-position: center 30%;
+  background-repeat: no-repeat;
   opacity: 0;
   animation: ap-crossfade 18s infinite;
-  mix-blend-mode: normal;
+  mix-blend-mode: overlay;
 }
 
 @keyframes ap-crossfade {
-  0%   { opacity: 0;   transform: scale(1.08); }
-  3%   { opacity: 1; }
-  30%  { opacity: 1;   transform: scale(1.0); }
+  0%   { opacity: 0;   transform: scale(1.05); }
+  5%   { opacity: 0.75; }
+  28%  { opacity: 0.75; transform: scale(1.0); }
   33%  { opacity: 0;   transform: scale(1.0); }
   100% { opacity: 0; }
 }
