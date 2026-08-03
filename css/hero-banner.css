@@ -537,18 +537,22 @@ html { scroll-behavior: smooth; }
   position: absolute; inset: 0 0 42% 0;
   background-size: cover;
   background-position: center 38%;
+  background-repeat: no-repeat;
   opacity: 0;
-  animation: ap-mid-slide 16s infinite;
+  animation: ap-mid-slide 24s infinite;
 }
 
 @keyframes ap-mid-slide {
-  0%, 100% { opacity: 0; transform: scale(1.06); }
-  4%       { opacity: 1; transform: scale(1.02); }
-  46%      { opacity: 1; transform: scale(1.0); }
-  50%      { opacity: 0; transform: scale(1.0); }
+  0%   { opacity: 0;   transform: scale(1.05); }
+  5%   { opacity: 0.75; }
+  28%  { opacity: 0.75; transform: scale(1.0); }
+  33%  { opacity: 0;   transform: scale(1.0); }
+  100% { opacity: 0; }
 }
 
 .ap-mid-frame .ap-slide.ap-s2 { animation-delay: 8s; }
+.ap-mid-frame .ap-slide.ap-s3 { animation-delay: 16s; }
+.ap-mid-frame .ap-slide.ap-s4 { animation-delay: 24s; }
 
 .ap-mid-frame .ap-sky-veil {
   position: absolute; inset: 0 0 42% 0;
@@ -615,7 +619,9 @@ html { scroll-behavior: smooth; }
   .ap-hero .ap-slide.ap-s2,
   .ap-hero .ap-slide.ap-s3,
   .ap-hero .ap-slide.ap-s4,
-  .ap-mid-frame .ap-slide.ap-s2 { opacity: 0; }
+  .ap-mid-frame .ap-slide.ap-s2,
+  .ap-mid-frame .ap-slide.ap-s3,
+  .ap-mid-frame .ap-slide.ap-s4 { opacity: 0; }
   .ap-hero .ap-ripples::before,
   .ap-hero .ap-ripples::after,
   .ap-mid-frame .ap-ripples::before,
