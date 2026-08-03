@@ -317,6 +317,107 @@ html { scroll-behavior: smooth; }
 }
 
 /* ==========================================================
+   EXTRA ATMOSPHERE (CSS-only, no video)
+   ========================================================== */
+
+/* ---- Drifting light rays in the sky area ---- */
+.ap-hero .ap-light-rays,
+.ap-mid-frame .ap-light-rays {
+  position: absolute;
+  inset: 0 0 42% 0;
+  background:
+    repeating-linear-gradient(
+      115deg,
+      rgba(237,234,224,0) 0%,
+      rgba(237,234,224,0.04) 8%,
+      rgba(237,234,224,0) 16%
+    );
+  background-size: 200% 200%;
+  animation: ap-rays-drift 18s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: overlay;
+}
+
+@keyframes ap-rays-drift {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ---- Subtle water-surface ripples ---- */
+.ap-hero .ap-ripples,
+.ap-mid-frame .ap-ripples {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 42%;
+  height: 80px;
+  transform: translateY(50%);
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.ap-hero .ap-ripples::before,
+.ap-hero .ap-ripples::after,
+.ap-mid-frame .ap-ripples::before,
+.ap-mid-frame .ap-ripples::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 140%;
+  aspect-ratio: 8 / 1;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(111,168,150,0.22);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.ap-hero .ap-ripples::before,
+.ap-mid-frame .ap-ripples::before {
+  animation: ap-ripple-expand 6s ease-out infinite;
+}
+
+.ap-hero .ap-ripples::after,
+.ap-mid-frame .ap-ripples::after {
+  animation: ap-ripple-expand 6s ease-out infinite 3s;
+}
+
+@keyframes ap-ripple-expand {
+  0%   { transform: translate(-50%, -50%) scale(0.4); opacity: 0; }
+  10%  { opacity: 1; }
+  60%  { opacity: 0.4; }
+  100% { transform: translate(-50%, -50%) scale(1.0); opacity: 0; }
+}
+
+/* ---- Floating dust/plankton particles ---- */
+.ap-hero .ap-particles,
+.ap-mid-frame .ap-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.ap-hero .ap-particle,
+.ap-mid-frame .ap-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: rgba(237,234,224,0.45);
+  animation: ap-particle-drift linear infinite;
+}
+
+@keyframes ap-particle-drift {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.2; }
+  100% { transform: translateY(-120px) translateX(40px); opacity: 0; }
+}
+
+/* ==========================================================
    MID-PAGE BANNER  (.ap-mid-banner)
    ========================================================== */
 .ap-mid-banner {
@@ -480,8 +581,18 @@ html { scroll-behavior: smooth; }
   .ap-hero .ap-bubble,
   .ap-hero .ap-eyebrow::before,
   .ap-hero .ap-phone-card,
+  .ap-hero .ap-light-rays,
+  .ap-hero .ap-ripples,
+  .ap-hero .ap-ripples::before,
+  .ap-hero .ap-ripples::after,
+  .ap-hero .ap-particle,
   .ap-mid-frame .ap-slide,
-  .ap-mid-frame .ap-bubble {
+  .ap-mid-frame .ap-bubble,
+  .ap-mid-frame .ap-light-rays,
+  .ap-mid-frame .ap-ripples,
+  .ap-mid-frame .ap-ripples::before,
+  .ap-mid-frame .ap-ripples::after,
+  .ap-mid-frame .ap-particle {
     animation: none !important;
   }
   .ap-hero .ap-slide.ap-s1,
@@ -489,6 +600,10 @@ html { scroll-behavior: smooth; }
   .ap-hero .ap-slide.ap-s2,
   .ap-hero .ap-slide.ap-s3,
   .ap-mid-frame .ap-slide.ap-s2 { opacity: 0; }
+  .ap-hero .ap-ripples::before,
+  .ap-hero .ap-ripples::after,
+  .ap-mid-frame .ap-ripples::before,
+  .ap-mid-frame .ap-ripples::after { opacity: 0; }
 }
 
 /* ==========================================================

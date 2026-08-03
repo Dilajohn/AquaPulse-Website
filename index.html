@@ -110,6 +110,9 @@
                 dur="4.5s" repeatCount="indefinite" />
             </path>
           </svg>
+          <div class="ap-light-rays"></div>
+          <div class="ap-ripples"></div>
+          <div class="ap-particles" id="ap-hero-particles"></div>
           <div class="ap-bubbles" id="ap-hero-bubbles"></div>
           <div class="ap-frame-caption">AquaPulse &middot; ESP32 standalone build</div>
         </div>
@@ -370,6 +373,9 @@
                   dur="4.5s" repeatCount="indefinite" />
               </path>
             </svg>
+            <div class="ap-light-rays"></div>
+            <div class="ap-ripples"></div>
+            <div class="ap-particles" id="ap-mid-particles"></div>
             <div class="ap-bubbles" id="ap-mid-bubbles"></div>
             <div class="ap-frame-caption">Offline-first &middot; Single MCU</div>
           </div>
@@ -752,6 +758,25 @@
         b.style.animationDelay    = delay + 's';
         b.style.setProperty('--drift', drift);
         field.appendChild(b);
+      }
+    });
+
+    // Populate floating particles for both banner frames
+    ['ap-hero-particles', 'ap-mid-particles'].forEach(function(id) {
+      var field = document.getElementById(id);
+      if (!field) return;
+      for (var i = 0; i < 18; i++) {
+        var p = document.createElement('div');
+        p.className = 'ap-particle';
+        var left  = Math.random() * 100;
+        var top   = Math.random() * 100;
+        var dur   = 12 + Math.random() * 14;
+        var delay = Math.random() * 10;
+        p.style.left = left + '%';
+        p.style.top  = top + '%';
+        p.style.animationDuration = dur + 's';
+        p.style.animationDelay    = delay + 's';
+        field.appendChild(p);
       }
     });
   </script>
