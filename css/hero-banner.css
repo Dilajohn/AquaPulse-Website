@@ -221,7 +221,7 @@ html { scroll-behavior: smooth; }
   background-position: center 30%;
   background-repeat: no-repeat;
   opacity: 0;
-  animation: ap-crossfade 18s infinite;
+  animation: ap-crossfade 24s infinite;
   mix-blend-mode: overlay;
 }
 
@@ -235,6 +235,7 @@ html { scroll-behavior: smooth; }
 
 .ap-hero .ap-slide.ap-s2 { animation-delay: 6s; }
 .ap-hero .ap-slide.ap-s3 { animation-delay: 12s; }
+.ap-hero .ap-slide.ap-s4 { animation-delay: 18s; }
 
 .ap-hero .ap-grade {
   position: absolute; inset: 0 0 42% 0;
@@ -613,6 +614,7 @@ html { scroll-behavior: smooth; }
   .ap-mid-frame .ap-slide.ap-s1 { opacity: 1; }
   .ap-hero .ap-slide.ap-s2,
   .ap-hero .ap-slide.ap-s3,
+  .ap-hero .ap-slide.ap-s4,
   .ap-mid-frame .ap-slide.ap-s2 { opacity: 0; }
   .ap-hero .ap-ripples::before,
   .ap-hero .ap-ripples::after,
