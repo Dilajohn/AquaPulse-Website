@@ -97,6 +97,51 @@ The enclosure houses a translucent food hopper with ultrasonic fill-level sensin
 a servo-driven dispensing mechanism with agitator arm, and a sealed electronics bay
 containing the Arduino/ESP32 controllers, DS3231 RTC, and power management board.
 
+### Prototype Photos
+
+Real hardware assembled during development:
+
+**Assembled prototype unit:**
+
+![Assembled prototype unit showing hopper, LCD, status LED, and feed button](img/prototype-assembly.jpg)
+
+**Ultrasonic sensor over the feed hopper:**
+
+![Ultrasonic sensor mounted above the feed hopper](img/hopper-sensor-test.jpg)
+
+**Working LCD readout:**
+
+![Working LCD readout showing hopper level and online status](img/prototype-lcd-display.jpg)
+
+**Mobile dashboard view:**
+
+![Mobile dashboard showing feeder status, hopper level, and manual controls](img/mobile-dashboard.jpg)
+
+### Demo Videos
+
+| # | Video | Description |
+|---|-------|-------------|
+| 1 | [Hardware Assembly & Wiring](vid/vid1.mp4) | Complete ESP32 wiring, stepper motor, ultrasonic sensor, and DS3231 RTC setup |
+| 2 | [Automated Feeding Demo](vid/vid2.mp4) | Scheduled feeding cycle, hopper telemetry, LCD update, and buzzer alert |
+| 3 | [Web Dashboard Walkthrough](vid/vid3.mp4) | React dashboard, schedules, hopper graphs, alerts, and offline-cache sync |
+
+<details>
+<summary>Click to expand video previews</summary>
+
+**Video 1: Hardware Assembly & Wiring**
+
+<video src="vid/vid1.mp4" controls width="100%"></video>
+
+**Video 2: Automated Feeding Demo**
+
+<video src="vid/vid2.mp4" controls width="100%"></video>
+
+**Video 3: Web Dashboard Walkthrough**
+
+<video src="vid/vid3.mp4" controls width="100%"></video>
+
+</details>
+
 ## Firmware
 
 Location: `AquaPulse_ESP32_Firmware_v3_2/AquaPulse_ESP32_Firmware_v3_2.ino`
@@ -170,12 +215,9 @@ that serves as the public-facing overview page for AquaPulse. It includes:
 - Project overview, problem statement, objectives, and requirements
 - Hardware component and software stack tables
 - Team member listing with registration and student numbers
-- Architecture diagrams and prototype photos (**placeholder images** -- replace
-  `img/dummay-img.png` with actual project images)
-- **Three video placeholder slots** for hardware assembly, feeding demo, and dashboard
-  walkthrough (add MP4 files to `vid/` and update the `<div class="video-placeholder">`
-  blocks with `<video>` tags)
-- Web dashboard screenshots, future work roadmap, and references
+- Circuit wiring schematic, enclosure renders, prototype photos, and dashboard screenshots
+- Embedded demo videos for hardware assembly, feeding demo, and dashboard walkthrough
+- Future work roadmap and references
 
 ### Serving the website locally
 
